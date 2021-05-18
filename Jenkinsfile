@@ -2,13 +2,14 @@ pipeline{
     agent any
     stages{
         stage("SCM Checkout"){
-            steps{
+           steps{
                 git 'https://github.com/sea-region/my-app'
             }
         }
         stage("Compile Package"){
             steps{
-                sh 'mvn -q clean package'
+                def mavehome = tool name: 'maven3', type: 'maven'
+                sh '${mavehome}/bin/mvn -q clean package'
             }
         }
    
