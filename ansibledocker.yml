@@ -6,7 +6,7 @@
        name: python-pip
        state: present
    - name: install Docker 
-     yum:
+     pip:
        name: docker
        state: present
    - name: start a container
