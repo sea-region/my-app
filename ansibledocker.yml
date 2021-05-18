@@ -7,7 +7,7 @@
        state: present
    - name: install Docker 
      pip:
-       name: docker
+       name: docker-py
        state: present
    - name: start docker
      service:
