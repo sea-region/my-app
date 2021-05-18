@@ -11,7 +11,7 @@ pipeline{
         }
         stage("Compile Package"){
             steps{
-               #comment dd ddd
+               #comment
                 sh "mvn -q clean package"
             }
         }
