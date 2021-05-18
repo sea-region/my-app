@@ -1,24 +1,16 @@
-@Library('javahome-libs') _
 pipeline{
     agent any
-    tools{
-        maven 'maven3'
-    }
     stages{
-        stage("Create Folder"){
+        stage("SCM Checkout"){
             steps{
-                sh "mkdir -p ${env.JOB_NAME}"
+                git 'https://github.com/sea-region/my-app'
             }
         }
-        stage("Maven Build"){
+        stage("Compile Package"){
             steps{
-                sh 'mvn clean package'
+                sh 'mvn -q clean package'
             }
         }
-        stage("Deploy to Tomcat Dev"){
-            steps{
-                tomcatDeploy('tomcat-dev','ec2-user','172.31.40.104')
-            }
-        }
+   
     }
 }
