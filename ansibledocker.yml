@@ -5,11 +5,15 @@
      yum:
        name: python-pip
        state: present
+   - name: install Docker 
+     yum:
+       name: docker
+       state: present
    - name: install docker for python
      pip:
-       name: docker-py
+       name: docker
        state: present
-   - name: Restart a container
+   - name: start a container
      docker_container:
        name: myapplication
        image: dkddkd/myimage:1.1
