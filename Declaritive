@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    stages{
+        stage("Welcome to declaritive"){
+            steps{
+                echo "welcome to declaritive"
+            }
+            
+        }
+        stage("Git checkout"){
+            steps{
+                git credentialsId: 'Github', url: 'https://github.com/sea-region/my-app'
+            }
+            
+            
+        }
+       
+    }
+}
