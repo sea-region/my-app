@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools{
+     maven 'maven3'   
+    }
     stages{
         stage("SCM Checkout"){
            steps{
@@ -9,7 +12,7 @@ pipeline{
         stage("Compile Package"){
             steps{
                 def mavehome = tool name: 'maven3', type: 'maven'
-                sh "${mavehome}/bin/mvn -q clean package"
+                sh "mvn -q clean package"
             }
         }
    
