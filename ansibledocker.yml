@@ -14,7 +14,7 @@
        name: docker
        state: started
        enabled: yes     
-  - name: start a container
+   - name: start a container
      docker_container:
        name: myapplication
        image: dkddkd/myimage:1.1
