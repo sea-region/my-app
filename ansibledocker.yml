@@ -9,10 +9,6 @@
      yum:
        name: docker
        state: present
-   - name: install docker for python
-     pip:
-       name: docker-py
-       state: present
    - name: start a container
      docker_container:
        name: myapplication
