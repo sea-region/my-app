@@ -3,11 +3,13 @@ pipeline{
     tools {
         maven 'maven3' 
     }
+    
 
     stages{
         stage("Welcome to declaritive"){
             steps{
-                echo "welcome to declaritive"
+                echo "welcome to declaritive $env.JENKINS_URL"
+                
             }
             
         }
