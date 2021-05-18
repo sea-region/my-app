@@ -9,6 +9,15 @@
      pip:
        name: docker
        state: present
+   - name: start docker
+     service:
+       name: docker
+       state: started
+       enabled: yes     
+   - name: Install docker python module
+     pip:
+       name: docker-py
+       state: present     
    - name: start a container
      docker_container:
        name: myapplication
