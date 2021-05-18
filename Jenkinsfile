@@ -11,7 +11,7 @@ pipeline{
         }
         stage("Compile Package"){
             steps{
-                def mavehome = tool name: 'maven3', type: 'maven'
+              
                 sh "mvn -q clean package"
             }
         }
